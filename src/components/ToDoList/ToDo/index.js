@@ -39,7 +39,7 @@ function ToDo(props) {
   const [shouldSetColor, setShouldSetColor] = useState(
     isAutomaticColor || false
   );
-  const [cardColor, setCardColor] = useState(taskColor || "#808080");
+  const [cardColor, setCardColor] = useState(taskColor);
   const [remainingTime, setRemainingTime] = useState("");
 
   function handleTargetDateChange(targetDate) {
@@ -116,7 +116,6 @@ function ToDo(props) {
       } else if (Math.abs(date.asHours()) <= 1) {
         return COLORS_BASED_IN_REMAINING_TIME.close;
       }
-      return color;
     }
   }, [remainingTime, targetDate]);
 
@@ -144,7 +143,11 @@ function ToDo(props) {
               }
             />
             <div>
-              <button type="button" onClick={handleToggleConfigurationMode}>
+              <button
+                type="button"
+                aria-label="Task Configuration"
+                onClick={handleToggleConfigurationMode}
+              >
                 ⚙️
               </button>
             </div>

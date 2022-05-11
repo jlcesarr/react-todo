@@ -62,16 +62,18 @@ function ToDoList() {
   function handleTodoComplete(todoId) {
     setTodos((prevTodos) => {
       return prevTodos.map((todo) => {
-        if (!todo.done) {
-          storeLog({
-            action: "Completed",
-            taskId: todoId,
-          });
+        if (todo.id === todoId) {
+          if (!todo.done) {
+            storeLog({
+              action: "Completed",
+              taskId: todoId,
+            });
+          }
+
+          return { ...todo, done: Boolean(!todo.done) };
         }
 
-        return todo.id === todoId
-          ? { ...todo, done: Boolean(!todo.done) }
-          : todo;
+        return todo;
       });
     });
   }

@@ -17,7 +17,12 @@ function ToDoPreferences(props) {
     <Container>
       <PreferencesHeader>
         <h2>Preferences</h2>
-        <button onClick={props.onConfigurationMode}>❌</button>
+        <button
+          aria-label="Close Task Configuration"
+          onClick={props.onConfigurationMode}
+        >
+          ❌
+        </button>
       </PreferencesHeader>
       <hr />
 
@@ -35,18 +40,20 @@ function ToDoPreferences(props) {
             type="datetime-local"
           />
 
-          <span>Card Color</span>
-
+          <span>Task Color</span>
           <CardColors>
             <ColorCircle
+              aria-label="Color"
               onClick={() => props.onCardColorChange("#660708")}
               color={"#660708"}
             ></ColorCircle>
             <ColorCircle
+              aria-label="Color"
               onClick={() => props.onCardColorChange("#FBEB9566")}
               color={"#FBEB9566"}
             ></ColorCircle>
             <ColorCircle
+              aria-label="Color"
               onClick={() => props.onCardColorChange("#808080")}
               color={"#808080"}
             ></ColorCircle>

@@ -5,6 +5,7 @@ export const TodoHeader = styled.div`
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
   grid-column: span 2;
+  align-items: center;
 
   & > div {
     justify-self: end;
@@ -20,7 +21,7 @@ export const TodoHeader = styled.div`
 `;
 
 export const ToDoCard = styled.article`
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.color || "#808080"};
   overflow: hidden;
   position: relative;
   padding: 16px;
@@ -44,8 +45,8 @@ export const ToDoCard = styled.article`
 export const TaskName = styled.input`
   background: transparent;
   border: none;
+  font-size: 24px;
   color: #fff;
-  font-size: 20px;
   max-width: 200px;
   &:focus,
   &:active {
