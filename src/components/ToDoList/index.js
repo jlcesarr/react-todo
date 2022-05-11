@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from "react";
-import initialTodos from "../../mocks/todos.js";
 import {
   Container,
   MainContainer,
@@ -14,7 +13,7 @@ import ToDo from "./ToDo";
 
 function ToDoList() {
   const [todos, setTodos] = useState(
-    JSON.parse(localStorage.getItem("todos")) || initialTodos
+    JSON.parse(localStorage.getItem("todos")) || []
   );
   const [showChangelog, setShowChangelog] = useState(false);
 
