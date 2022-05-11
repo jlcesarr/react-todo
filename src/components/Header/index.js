@@ -7,7 +7,7 @@ function Header() {
       <HeaderIcon>
         <span>✅</span>
       </HeaderIcon>
-      <HeaderTitle>ToDo App</HeaderTitle>
+      <HeaderTitle>To Do App</HeaderTitle>
     </Container>
   );
 }
