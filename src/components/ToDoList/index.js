@@ -162,8 +162,7 @@ function ToDoList() {
               }}
             >
               {todos
-                .sort((a, b) => (a.id > b.id ? -1 : -1))
-                .sort((a, b) => (a.done ? 1 : -1))
+                .sort((a, b) => (a.id > b.id ? 1 : -1))
                 .map((todo) => (
                   <ToDo
                     key={todo.id}
